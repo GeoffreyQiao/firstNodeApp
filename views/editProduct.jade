@@ -1,0 +1,99 @@
+extends layout.jade
+block content
+  form.product-info.product-info-view#edit-product
+    .row
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;条&nbsp;形&nbsp;码&nbsp;
+          input.form-control(name="P_barcode", type="text", placeholder="条形码")
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;
+          input.form-control(name="P_NO", type="text")
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;牌&nbsp;
+          input.form-control(name="P_brand", type="text")
+    .row
+      .col-lg-8
+        .input-group.input-group-lg
+          span.input-group-addon 商品名称
+          input.form-control(name="P_name", type="text")
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon 快捷简码
+          input.form-control(name="P_py", type="text")
+    hr
+    .row
+      .col-lg-3
+        .input-group.input-group-lg
+          span.input-group-addon 计价单位
+          input.form-control(name="P_mainUnit", type="text")
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon 是否启用辅助单位
+          .btn-group.btn-group-lg(role="group")
+            button.btn.btn-primary.btn-lg(type="button")
+              a#use-helpUnits(href="#") &nbsp;&nbsp;&nbsp;启&nbsp;&nbsp;用&nbsp;&nbsp;
+            button.btn.btn-danger.btn-lg(type="button")
+              a#no-helpUnits(href="#") &nbsp;&nbsp;停&nbsp;&nbsp;用&nbsp;&nbsp;&nbsp;
+      .col-lg-3
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;换&nbsp;&nbsp;&nbsp;算&nbsp;
+          input.form-control(name="P_unitChange", type="text")
+      .col-lg-2
+        .input-group.input-group-lg
+          span.input-group-addon 辅助单位
+          input.form-control(name="P_helpUnit", type="text")
+    .row
+      .col-lg-3
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价&nbsp;
+          input.form-control(name="P_price", type="number")
+      .col-lg-4
+        .input-group.input-group-lg
+          span.input-group-addon 是否启用辅助条码
+          .btn-group.btn-group-lg(role="group")
+            button.btn.btn-primary.btn-lg(type="button")
+              a#use-helpUnits(href="#") &nbsp;&nbsp;&nbsp;启&nbsp;&nbsp;用&nbsp;&nbsp;
+            button.btn.btn-danger.btn-lg(type="button")
+              a#no-helpUnits(href="#") &nbsp;&nbsp;停&nbsp;&nbsp;用&nbsp;&nbsp;&nbsp;
+      .col-lg-3
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;条&nbsp;&nbsp;&nbsp;码&nbsp;
+          input.form-control(name="P_helpBarcode", type="text")
+      .col-lg-2
+        .input-group.input-group-lg
+          span.input-group-addon 辅助进价
+          input.form-control(name="P_helpPrice", type="text")
+    hr
+    .row
+      .col-lg-6
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;售&nbsp;&nbsp;&nbsp;价&nbsp;
+          input.form-control(name="P_price_main", type="text")
+          span.input-group-addon 元
+
+      .col-lg-6
+        .input-group.input-group-lg
+          span.input-group-addon 辅助单位售价
+          input.form-control(name="P_price_help", type="text")
+          span.input-group-addon 元
+    hr
+    .row
+      .col-lg-6
+        .input-group.input-group-lg
+          span.input-group-addon &nbsp;库&nbsp;&nbsp;&nbsp;存&nbsp;
+          input.form-control(name="P_haveYet", type="number")
+      .col-lg-6
+        .btn-group.btn-group-lg.btn-toolbar(role="group", aria-label="...")
+          button.btn.btn-lg.btn-primary 供应商
+          button.btn.btn-lg.btn-primary 大客户
+          button.btn.btn-lg.btn-primary 报&nbsp;&nbsp;&nbsp;&nbsp;表
+    .row
+    .row
+      .col-lg-3
+      .col-lg-3
+        button.form-control.btn.btn-success.formbtn#formSubmit &nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;
+      .col-lg-3
+        button.form-control.btn.btn-success.formbtn#formQuit &nbsp;退&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出&nbsp;

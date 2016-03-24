@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{firstNodeApp node_modules}" />
+    <file url="file://$PROJECT_DIR$/views" libraries="{jade-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{angularjs-DefinitelyTyped, body-parser-DefinitelyTyped, bootstrap, connect-mongo-DefinitelyTyped, express-DefinitelyTyped, express-openapi-DefinitelyTyped, express-route-fs-DefinitelyTyped, jade-DefinitelyTyped, jquery, jquery-DefinitelyTyped, mongoose, node-DefinitelyTyped, node-validator-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="Node.js Core" />
+  </component>
+</project>

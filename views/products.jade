@@ -1,0 +1,55 @@
+extends layout.jade
+block content
+  .container
+    .row
+      .table-responsive
+        table.table.table-hover#products
+          thead
+            tr
+              td #
+              td 条码
+              td 商品名称
+              td 规格
+              td 单价
+          tbody
+
+            - var i = 0
+            each item in products
+              tr
+                td= ++i
+                td= item.P_barcode
+                td= item.P_name
+                td= item.P_mainUnit
+                td= item.P_price_main
+
+    - if(totalPage > 0)
+      .row
+        .col-lg-12
+          //商品列表分页导航工具条
+          nav.text-center
+            ul.pagination.pagination-lg
+              - if(parseInt(currentPage) === 1)
+                li.disabled
+                  a(href="#",aria-label="上一页")
+                    span(aria-hidden="true") &laquo;
+              - else
+                li
+                  a(href="#{baseUrl}/products?page=#{parseInt(currentPage) - 1}", aria-label="上一页")
+                    span(aria-hidden="true") &laquo;
+
+              - for(var i = 1; i < totalPage + 1; i++)
+                - if(i == currentPage)
+                  li.active
+                    a(href="#{baseUrl}/products?page=#{i}") #{currentPage}
+                - else
+                  li
+                    a(href="#{baseUrl}/products?page=#{i}") #{i}
+
+              - if(parseInt(currentPage) === parseInt(totalPage))
+                li.disabled
+                  a(href="#",aria-label="上一页")
+                    span(aria-hidden="true") &raquo;
+              - else
+                li
+                  a(href="#{baseUrl}/products?page=#{parseInt(currentPage) + 1}", aria-label="下一页")
+                    span(aria-hidden="true") &raquo;
