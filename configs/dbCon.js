@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 /**
  * @object {dbCon} 数据库配置信息
  * @type {{hostName: string, port: number, dbName: string}}

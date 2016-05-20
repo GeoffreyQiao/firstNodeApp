@@ -16,13 +16,19 @@ html(lang='zh-CN')
           button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
             span.sr-only Toggle navigation
             span.icon-bar
+              img(alt="Brand", src="#{baseUrl}/images/index.png")
             span.icon-bar
             span.icon-bar
-
+          //- a(href="#").navbar-brand
+          //-   img(alt="Brand", src="#{baseUrl}/images/index.png")
         .collapse.navbar-collapse.navbar-ex1-collapse
           ul.nav.navbar-nav
             li: a(href="#{baseUrl}") Home
             li: a(href="#{baseUrl}/products") 用户
+          form(role="search").navbar-form.navbar-right
+            .form-group
+              input(type="text", placeholder="Search").form-control
+            button(type="submit").btn.btn-default 提交
           ul.nav.navbar-nav.navbar-left
             li.dropdown
               a.dropdown-toggle(href="#{baseUrl}/products", data-toggle="dropdown",role="button", aria-expanded="false")
@@ -30,11 +36,9 @@ html(lang='zh-CN')
                 span.caret
               ul.dropdown-menu(role="menu")
                 li: a(href="#{baseUrl}/products?page=1") 商品列表
-          form(role="search").navbar-form.navbar-right
-            .form-group
-              input(type="text", placeholder="Search").form-control
-            button(type="submit").btn.btn-default 提交
-
+                li: a(href="#") Another action
+                li: a(href="#") Something else here
+                li: a(href="#") Separated link
     block content
 
   block foot
@@ -43,6 +47,4 @@ html(lang='zh-CN')
     script(type="application/javascript", src="#{baseUrl}/javascripts/bootstrap.min.js")
     script(type="application/javascript", src="#{baseUrl}/javascripts/app.js")
     script(type="application/javascript", src="#{baseUrl}/javascripts/angular.min.js")
-    script(type="application/javascript", src="#{baseUrl}/javascripts/app-angular.js")
-
 
