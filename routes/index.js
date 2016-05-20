@@ -12,4 +12,9 @@ router.post('/post', function(req, res, next) {
     console.log(req.body);
     res.end(JSON.stringify(req.body));
 });
+
+router.get('test', function(req, res, next){
+    res.send('../views/test.html');
+    res.end();
+})
 module.exports = router;

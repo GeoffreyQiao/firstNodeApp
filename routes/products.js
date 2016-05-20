@@ -19,8 +19,7 @@ var addProduct = function(product, callback){
  * @param pageOptions [type:object]
  * @param callback
  */
-var getProducts;
-getProducts = function(pageOptions, callback){
+var getProducts = function(pageOptions, callback){
 
   /**
    * @description 获取所有商品的数量,并执行callback
@@ -104,12 +103,12 @@ router.get('/', function(req, res, next) {
     var pageOptions = new PageOptions(7, pageNo);
 
     getProducts(pageOptions, function(product, totalPage){
-      res.render({
+      res.render("products", {
         title: "Geo 商品管理",
         products : product,
         currentPage : pageNo,
         totalPage : totalPage
-      }, "products");
+      });
     });
   }else{
     res.render('productsView');
@@ -132,3 +131,29 @@ router.post('/addProduct', function(req, res, next) {
     });
 });
 module.exports = router;
+
+
+//-----------------------------------------------
+var getProductsList = function(callback){
+
+  /**
+   * @description 获取所有商品的数量,并执行callback
+   */
+  ProductModel.find({}, function(err, product)
+    {
+      if(err)
+      {
+        console.log(err);
+        throw err;
+      }
+      callback && callback(product);
+    });
+};
+
+router.get('/list', function(req, res) {    //url: "products/list"
+    getProductsList(function(product){
+      console.log(product);
+      res.json(product);
+    });
+});
+
